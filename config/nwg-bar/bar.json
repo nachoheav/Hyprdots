@@ -1,0 +1,18 @@
+[
+  {
+    "label": "󰌾",
+    "exec": "hyprlock -q"
+  },
+  {
+    "label": "",
+    "exec": "hyprland exit"
+  },
+  {
+    "label": "󰓦",
+    "exec": "systemctl reboot"
+  },
+  {
+    "label": "⏻",
+    "exec": "systemctl -i poweroff"
+  }
+]

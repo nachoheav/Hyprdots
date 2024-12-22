@@ -1,0 +1,103 @@
+/* GENERAL CONFIG */
+
+* {
+    font-family: Roboto;
+    font-size: 17px;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* WORKSPACES CONFIG */
+
+#workspaces {
+    background-color: rgba(31, 31, 31, 0.7);
+    border-radius: 12px;
+}
+
+#workspaces button {
+    color: #c5c8c6;
+}
+
+#workspaces button.active {
+    color: #8EC5FC;
+}
+
+/* MODULES */
+
+.modules-left, .modules-right, .modules-center {
+    margin: 15px 18px;
+}
+
+/* .modules-right {
+    background-color: rgba(31, 31, 31, 0.7);
+    border-radius: 12px;
+    padding-right: 8px;
+} */
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#clock,
+#cpu,
+#memory,
+#disk,
+#pulseaudio,
+#custom-power,
+#custom-menu
+ {
+    background-color: rgba(31, 31, 31, 0.7);
+    padding: 0 12px;
+    color: #c5c8c6;
+    font-weight: bold;
+    margin-left: -8px;
+}
+
+#pulseaudio {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+#custom-power {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding-right: 20px;
+}
+
+#clock {
+    border-radius: 12px;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.custom-spotify {
+    padding: 0 10px;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    color: black;
+    border-radius: 12px;
+    margin-right: 16px;
+}
+
+#custom-menu {
+    border-radius: 12px;
+    margin-right: 2px;
+    color: #8EC5FC;
+}
+
+tooltip {
+    font-family: Roboto;
+    border-radius: 12px;
+    background-color: rgba(31, 31, 31, 0.7);
+}

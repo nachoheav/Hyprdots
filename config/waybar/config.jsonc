@@ -1,0 +1,113 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 42, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 8, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/menu",
+        "hyprland/workspaces"
+    ],
+    // "modules-center": [
+        
+    // ],
+    "modules-right": [
+        "custom/spotify",
+        "clock",
+        "mpd",
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "custom/power"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{icon}",
+         "format-icons": {
+             "1": "󰽢",
+             "2": "󰽢",
+             "3": "󰽢",
+             "4": "󰽢",
+             "5": "󰽢",
+             "6": "󰽢",
+             "active": ""
+         },
+         "persistent-workspaces": {
+		"*": [ 1,2,3,4,5,6 ]
+	    }
+     },
+    // "clock": {
+    //     "timezone": "America/Argentina/Buenos_Aires",
+    //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    //     "format-alt": "{:%d/%m/%Y}"
+    // },
+    "clock": {
+        "timezone": "America/Argentina/Buenos_Aires",
+        "format": "{:%H:%M}",
+        "format-alt": "{:%d/%m/%Y}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 3,
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#E0C3FC'><b>{}</b></span>",
+                              "days":       "<span color='#c5c8c6'><b>{}</b></span>",
+                              "weekdays":   "<span color='#8EC5FC'><b>{}</b></span>",
+                              "today":      "<span color='#8EC5FC'><b><u>{}</u></b></span>"
+                              }
+                    }
+    },
+    "cpu": {
+        "format": "",
+        "tooltip-format": "{usage}%"
+    },
+    "memory": {
+        "format": "",
+        "tooltip-format": "{}%"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}",
+        "tooltip-format": "{volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 $HOME/.config/waybar/resources/mediaplayer.py --player spotify",
+        "format": "{}  ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
+    "custom/power": {
+        "format" : "⏻",
+        "tooltip": false,
+        "on-click": "nwg-bar"
+    },
+    "custom/menu": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wofi --show drun"
+    }
+}
