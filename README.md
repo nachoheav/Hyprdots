@@ -1,7 +1,7 @@
 # Heav-Dotfiles for Hyprland
 ### Hyprland Dots | HyprDots
 
-![image]()
+![image](https://raw.githubusercontent.com/nachoheav/Hyprdots/refs/heads/main/Hyprdots.png)
 
 > [!IMPORTANT]
 > Se trata de una primera versiòn de mis archivos de configuraciòn sobre Hyprland.
